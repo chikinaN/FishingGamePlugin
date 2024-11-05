@@ -9,9 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public enum FishingItems {
+  // デバック用のアイテム
   GOLDEN_FISH(new Fish("Golden Fish", ItemRarity.COMMON, new ItemStack(Material.DIAMOND, 1), "A rare fish that brings fortune.", null)),
   MAGIC_CARP(new Fish("Magic Carp", ItemRarity.UNCOMMON, new ItemStack(Material.DIAMOND, 2), "A mystical fish with healing properties.", null)),
-  CRYSTAL_TROUT(new Fish("Crystal Trout", ItemRarity.RARE, new ItemStack(Material.DIAMOND, 3), "A fish of crystal-clear beauty.", null));
+  CRYSTAL_TROUT(new Fish("Crystal Trout", ItemRarity.RARE, new ItemStack(Material.DIAMOND, 3), "A fish of crystal-clear beauty.", null)),
+  ;
 
   private final Fish fish;
 
