@@ -1,0 +1,9 @@
+name: FishingGamePlugin
+version: '${project.version}'
+main: com.chigayuki.minecraft.FishingGamePlugin
+api-version: '1.16'
+commands:
+  fishing:
+    description: "釣りのミニゲームを開始"
+  fishList:
+    description: "釣れる魚の一覧を表示"
