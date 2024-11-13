@@ -10,9 +10,9 @@ import java.util.List;
 
 public enum FishingItems {
   // デバック用のアイテム
-  GOLDEN_FISH(new Fish("Golden Fish", ItemRarity.COMMON, new ItemStack(Material.DIAMOND, 1), "A rare fish that brings fortune.", null)),
-  MAGIC_CARP(new Fish("Magic Carp", ItemRarity.UNCOMMON, new ItemStack(Material.DIAMOND, 2), "A mystical fish with healing properties.", null)),
-  CRYSTAL_TROUT(new Fish("Crystal Trout", ItemRarity.RARE, new ItemStack(Material.DIAMOND, 3), "A fish of crystal-clear beauty.", null)),
+  FISH_1(new Fish("さかな1", ItemRarity.COMMON, new ItemStack(Material.TROPICAL_FISH), "テスト魚", null)),
+  FISH_2(new Fish("さかな2", ItemRarity.UNCOMMON, new ItemStack(Material.SALMON), "テスト魚", null)),
+  FISH_3(new Fish("さかな3", ItemRarity.RARE, new ItemStack(Material.PUFFERFISH), "テスト魚", null)),
   ;
 
   private final Fish fish;
@@ -25,12 +25,20 @@ public enum FishingItems {
     return fish;
   }
 
+  public ItemStack getItem() {
+    return fish.getItem();
+  }
+
   public static List<ItemStack> getFishList() {
     List<ItemStack> itemStackList = new ArrayList<>();
     for (FishingItems item : values()) {
       itemStackList.add(item.getFish().getItem());
     }
     return itemStackList;
+  }
+
+  public static Fish getRandomFish() {
+    return values()[(int) (Math.random() * values().length)].getFish();
   }
 
   public static Fish getFishByName(String name) {

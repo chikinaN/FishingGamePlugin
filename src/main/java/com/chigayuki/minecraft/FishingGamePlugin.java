@@ -8,9 +8,11 @@ public final class FishingGamePlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        FishingCommand fishingCommand = new FishingCommand(this);
+        FishList fishList = new FishList();
 
-        getCommand("fishing").setExecutor(new FishingCommand());
-        getCommand("fishList").setExecutor(new FishList());
+        getCommand("fishing").setExecutor(fishingCommand);
+        getCommand("fishList").setExecutor(fishList);
     }
 
     @Override
