@@ -24,8 +24,8 @@ public class Fish {
     return name;
   }
 
-  public String getRarity() {
-    return rarity.name();
+  public ItemRarity getRarity() {
+    return rarity;
   }
 
   public int getPoints() {

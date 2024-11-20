@@ -12,7 +12,12 @@ import org.bukkit.event.player.PlayerFishEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FishingListener implements Listener {
+  private final List<FishingItems> items = new ArrayList<>();
+
   @EventHandler
   public void OnPlayerFishEvent(PlayerFishEvent event) {
     Player player = event.getPlayer();
@@ -26,8 +31,11 @@ public class FishingListener implements Listener {
         hook.setMinWaitTime(10);
         break;
       case CAUGHT_FISH:
-        ItemStack itemStack = FishingItems.getRandomFish().getItem();
-        Item droppedItem = player.getWorld().dropItem(event.getHook().getLocation(), itemStack);
+        FishingItems fish = FishingItems.getRandomFish();
+        player.sendMessage("釣り上げた魚: " + fish.toString());
+        addItems(fish);
+        ItemStack fishItem = fish.getItem();
+        Item droppedItem = player.getWorld().dropItem(event.getHook().getLocation(), fishItem);
         droppedItem.setPickupDelay(0);
         applyVelocity(player, droppedItem);
 
@@ -64,5 +72,13 @@ public class FishingListener implements Listener {
       return lureLevel * 100;
     }
     return 0;
+  }
+
+  private void addItems(FishingItems item) {
+    items.add(item);
+  }
+
+  public List<FishingItems> GetItems() {
+    return items;
   }
 }
