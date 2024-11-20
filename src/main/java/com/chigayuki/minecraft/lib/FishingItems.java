@@ -15,7 +15,8 @@ public enum FishingItems {
   FISH_2(new Fish("さかな2", ItemRarity.UNCOMMON, new ItemStack(Material.SALMON), "テスト魚", null)),
   FISH_3(new Fish("さかな3", ItemRarity.RARE, new ItemStack(Material.PUFFERFISH), "テスト魚", null)),
   FISH_4(new Fish("さかな4", ItemRarity.EPIC, new ItemStack(Material.COD), "テスト魚", null)),
-  FISH_5(new Fish("さかな5", ItemRarity.LEGENDARY, new ItemStack(Material.COOKED_COD), "テスト魚", null))
+  FISH_5(new Fish("さかな5", ItemRarity.LEGENDARY, new ItemStack(Material.COOKED_COD), "テスト魚", null)),
+//  MEGALODON(new Fish("メガロドン", ItemRarity.LEGENDARY, new ItemStack(Material.DIAMOND_SWORD), "伝説の魚", null))
   ;
 
   private final Fish fish;
